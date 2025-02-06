@@ -42,6 +42,14 @@
       <li>Editando e atribuindo o interessado a outro vendedor</li>
     </ul>
   </li>
+<br>
+  <li>Atribuição de interessado a um vendedor:
+    <ul>
+      <li>Acesso a listagem corretamente</li>
+      <li>Atribuição de um vendedor ao interessado via listagem pelo botão 'Atribuir Vendedor'</li>
+      <li>Validação da inclusão correta do vendedor ao interessado</li>
+    </ul>
+  </li>
 </div>
 
 <br>
