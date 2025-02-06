@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentação sobre a automação de testes no EBS Domínio">
+    
+    <link rel="canonical" href="https://tr.github.io/ebs-dominio_automacao-teste-contabil/testCases/">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+
+    
+    <title>Casos de teste - Automação de Testes - EBS Domínio</title>
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/v4-shims.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.min.css">
+    <link href='//rsms.me/inter/inter.css' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../css/base.min.css" rel="stylesheet">
+    <link href="../css/cinder.min.css" rel="stylesheet">
+
+    
+        
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+        
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+
+    
+
+     
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+
+            
+              <a class="navbar-brand" href="..">Automação de Testes - EBS Domínio</a>
+            
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../project/">Projeto</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Casos de teste</a>
+                    </li>
+                
+                
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <i class="fas fa-search"></i> Search
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../project/">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            Next <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="first-level active"><a href="#cenarios-automatizados">Cenários Automatizados</a></li>
+        <li class="first-level "><a href="#comercial">Comercial</a></li>
+            <li class="second-level"><a href="#interessados">Interessados</a></li>
+                
+            <li class="second-level"><a href="#prospects">Prospects</a></li>
+                
+            <li class="second-level"><a href="#oportunidades">Oportunidades</a></li>
+                
+            <li class="second-level"><a href="#contratos">Contratos</a></li>
+                
+            <li class="second-level"><a href="#contratos-perifericos">Contratos - Periféricos</a></li>
+                
+            <li class="second-level"><a href="#adendos">Adendos</a></li>
+                
+        <li class="first-level "><a href="#dominio-atendimento">Domínio Atendimento</a></li>
+            <li class="second-level"><a href="#contratacao-de-perifericos">Contratação de Periféricos</a></li>
+                
+            <li class="second-level"><a href="#cadastro-de-ssc">Cadastro de SSC</a></li>
+                
+            <li class="second-level"><a href="#tria">TRIA</a></li>
+                
+            <li class="second-level"><a href="#central-de-solucoes">Central de Soluções</a></li>
+                
+        <li class="first-level "><a href="#endpoints">Endpoints</a></li>
+            <li class="second-level"><a href="#clientes">Clientes</a></li>
+                
+            <li class="second-level"><a href="#ssc">SSC</a></li>
+                
+            <li class="second-level"><a href="#interessados_1">Interessados</a></li>
+                
+        <li class="first-level "><a href="#performance">Performance</a></li>
+            <li class="second-level"><a href="#testes-de-performance-ao-acessar-telas">Testes de performance ao acessar telas</a></li>
+                
+        <li class="first-level "><a href="#operacoes">Operações</a></li>
+            <li class="second-level"><a href="#analise-do-cliente">Análise do cliente</a></li>
+                
+            <li class="second-level"><a href="#atendimentos-e-implantacoes">Atendimentos e Implantações</a></li>
+                
+            <li class="second-level"><a href="#relatorios">Relatórios</a></li>
+                
+        <li class="first-level "><a href="#sgsai">SGSAI</a></li>
+            <li class="second-level"><a href="#fluxo-de-versao">Fluxo de versão</a></li>
+                
+            <li class="second-level"><a href="#sai-validacao-dos-botoes-auxiliares">SAI - Validação dos botões auxiliares</a></li>
+                
+            <li class="second-level"><a href="#notificacao-de-erro">Notificação de Erro</a></li>
+                
+            <li class="second-level"><a href="#solicitacao-de-alteracao-legal">Solicitação de Alteração Legal</a></li>
+                
+            <li class="second-level"><a href="#solicitacao-de-implementacao-legal">Solicitação de Implementação Legal</a></li>
+                
+            <li class="second-level"><a href="#pre-sai">Pré-SAI</a></li>
+                
+        <li class="first-level "><a href="#sgsc">SGSC</a></li>
+            <li class="second-level"><a href="#ocorrencias">Ocorrências</a></li>
+                
+            <li class="second-level"><a href="#liberacao-triachat-humano">Liberação TRIA/Chat Humano</a></li>
+                
+            <li class="second-level"><a href="#ssc_1">SSC</a></li>
+                
+            <li class="second-level"><a href="#chat-plug-social">Chat Plug Social</a></li>
+                
+            <li class="second-level"><a href="#central-de-solucoes_1">Central de Soluções</a></li>
+                
+            <li class="second-level"><a href="#filtros-tela-de-pesquisar-clientes">Filtros - Tela de Pesquisar Clientes</a></li>
+                
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="cenarios-automatizados"><h3 style="color: #48c;"><strong>Cenários Automatizados</strong></h3></h2>
+<div>
+<br>
+  A automação de testes deste projeto abrange diversos cenários, organizados dentro do diretório de testes no projeto. Abaixo está uma documentação detalhada dos principais cenários desenvolvidos:
+</div>
+
+<h2 id="comercial"><h3 style="color: #48c; margin: 38px 0;"><strong>Comercial</strong></h3></h2>
+<h4 id="interessados"><strong>Interessados</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de interessado com produto principal:
+    <ul>
+      <li>Domínio Start</li>
+      <li>Domínio Plus</li>
+      <li>Domínio Premium</li>
+    </ul>
+  </li>
+<br>
+  <li>Cadastro de interessado importando:
+    <ul>
+      <li>Por planilha XLS</li>
+      <li>Dados do CNPJ através do botão <code>Importar Dados</code></li>
+    </ul>
+  </li>
+<br>
+  <li>Cadastro de interessado manual:
+    <ul>
+      <li>Sem CNPJ – Teste validando bloqueio do sistema</li>
+      <li>Usando CPF e validando listagem dos dados</li>
+    </ul>
+  </li>
+<br>
+  <li>Cadastro de interessado via endpoint do site:
+    <ul>
+      <li>Sendo cliente ou não</li>
+      <li>Realizando trâmites até interessado ficar qualificado</li>
+      <li>Gerando atividades</li>
+      <li>Editando e atribuindo o interessado a outro vendedor</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="prospects"><strong>Prospects</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastrar Prospect padrão via interessado, para cenários de contrato.</li>
+  <li>Cadastrar Prospect avulso, utilizando o botão para importar dados.</li>
+  <li>Cadastrar Prospect e editar todos os campos do perfil, além de qualificar o prospect.</li>
+</div>
+
+<p><br></p>
+<h4 id="oportunidades"><strong>Oportunidades</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastrar uma oportunidade para os Contratos Contábil:
+    <ul>
+        <li>Domínio Start</li>
+        <li>Domínio Plus</li>
+        <li>Domínio Premium</li>
+        <li>Domínio Empresarial</li>
+        <li>Domínio Personalizado</li>
+    </ul>
+  </li>
+<br>
+  <li>Cadastrar uma oportunidade para Adendos:
+    <ul>
+      <li>Ampliação</li>
+      <li>Redução</li>
+    </ul>
+  </li>
+<br>
+  <li>Cadastrar uma oportunidade para os seguintes periféricos:
+    <ul>
+      <li>Auditor Kolossus</li>
+      <li>Busca NF-e</li>
+      <li>Conteúdo Contábil Tributário</li>
+      <li>Onvio Messenger</li>
+      <li>Onvio Processos</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="contratos"><strong>Contratos</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Contrato contábil Domínio Start:
+    <ul>
+      <li>Contrato padrão via assinatura Eletrônica Docusign</li>
+      <li>Abaixo da tabela</li>
+    </ul>
+  </li>
+<br>
+  <li>Contrato contábil Domínio Plus:
+    <ul>
+      <li>Contrato padrão via assinatura Eletrônica Docusign</li>
+      <li>Tipo Convênio/Escola</li>
+      <li>Para Ex Cliente</li>
+    </ul>
+  </li>
+<br>
+  <li>Contrato contábil Domínio Premium via assinatura Eletrônica Docusign.</li>
+  <li>Contrato contábil Domínio Empresarial via assinatura Eletrônica Docusign.</li>
+  <li>Contrato contábil Domínio Personalizado via assinatura Eletrônica Docusign.</li>
+</div>
+
+<p><br></p>
+<h4 id="contratos-perifericos"><strong>Contratos - Periféricos</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Contratação do periférico Auditor Kolossus.</li>
+  <li>Contratação do periférico Busca NF-e.</li>
+  <li>Contratação do periférico Conteúdo Contábil Tributário.</li>
+  <li>Contratação do periférico Onvio Messenger.</li>
+  <li>Contratação do periférico Onvio Processos.</li>
+</div>
+
+<p><br></p>
+<h4 id="adendos"><strong>Adendos</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Adendos de Ampliação e Redução - Contrato Domínio Start.</li>
+  <li>Adendos de Ampliação e Redução - Contrato Domínio Plus.</li>
+  <li>Adendos de Ampliação e Redução - Contrato Domínio Premium.</li>
+  <li>Adendos de Ampliação e Redução - Contrato Domínio Personalizado.</li>
+  <li>Adendos de Ampliação e Redução - Contrato Domínio Empresarial.</li>
+</div>
+
+<h2 id="dominio-atendimento"><h3 style="color: #48c; margin: 38px 0;"><strong>Domínio Atendimento</strong></h3></h2>
+<h4 id="contratacao-de-perifericos"><strong>Contratação de Periféricos</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Contratação dos periféricos disponibilizados para os seguintes produtos principais:
+    <ul>
+      <li>Start</li>
+      <li>Plus</li>
+      <li>Premium</li>
+      <li>Empresarial</li>
+      <li>Personalizado</li>
+    </ul>
+  </li>
+<br>
+  <li>
+    Validações realizadas:
+    <ul>
+      <li>Realização da contratação de cada periférico disponível do Domínio Atendimento</li>
+      <li>Validação do processamento de todos os periféricos</li>
+      <li>Verificação da replicação dos bundles e ativação dos produtos</li>
+      <li>Verificação do acesso ao Domínio Web</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="cadastro-de-ssc"><strong>Cadastro de SSC</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Cadastro de SSC via Domínio Atendimento
+  </li>
+<br>
+  <li>Validação do dados mostrados no registro da SSC, logo após o cadastro</li>
+  <li>Validação da listagem da SSC no Domínio Atendimento, utilizando filtros da tela para realizar a consulta</li>
+  <li>Validação da SSC dentro do SGD, verificando que a replicação foi feita corretamente</li>
+</div>
+
+<p><br></p>
+<h4 id="tria"><strong>TRIA</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li> Testes de validação das respostas da TRIA nos seguintes Chats:
+    <ul>
+      <li>Folha de pagamento</li>
+      <li>Escrita Fiscal</li>
+      <li>Contabilidade</li>
+      <li>Honorários</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="central-de-solucoes"><strong>Central de Soluções</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li> Testes na Central de Soluções no Domínio Atendimento, validando seguintes pontos:
+    <ul>
+      <li>Realizar consulta de um registro na Central de Soluções</li>
+      <li>Validar listagem de registros relacionados a consulta realizada</li>
+      <li>Validar os dados da solução e abertura do video vinculado</li>
+    </ul>
+  </li>
+</div>
+
+<h2 id="endpoints"><h3 style="color: #48c; margin: 38px 0;"><strong>Endpoints</strong></h3></h2>
+<h4 id="clientes"><strong>Clientes</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Validação nos endpoints de clientes:
+    <ul>
+      <li>Realiza validação em diversos clientes com produtos diferentes</li>
+      <li>Confere estrutura do cliente listado</li>
+      <li>Listagem correta de todos os clientes inclusos no endpoint</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="ssc"><strong>SSC</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Cadastro de uma SSC usando os endpoints do Domínio 2:
+    <ul>
+      <li>Vinculando anexo</li>
+      <li>Validando posteriormente no SGD o cadastro correto dela</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="interessados_1"><strong>Interessados</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Cadastro de interessado via os endpoints do Site:
+    <ul>
+      <li>Cadastro de um interessado como cliente</li>
+      <li>Cadastro de outro interessado como não cliente</li>
+      <li>Validando posteriormente o cadastro correto dos dois registros no SGD</li>
+    </ul>
+  </li>
+</div>
+
+<h2 id="performance"><h3 style="color: #48c; margin: 38px 0;"><strong>Performance</strong></h3></h2>
+<h4 id="testes-de-performance-ao-acessar-telas"><strong>Testes de performance ao acessar telas</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Testes de Performance ao acessar alguns links do sistema:
+    <ul>
+      <li>Validando o tempo de acesso</li>
+      <li>Registrando nos bancos de dados</li>
+      <li>Realizando uma média dos últimos 3 meses de registros</li>
+      <li>Validando se o tempo está de acordo ou não com as médias calculadas</li>
+    </ul>
+  </li>
+</div>
+
+<h2 id="operacoes"><h3 style="color: #48c; margin: 38px 0;"><strong>Operações</strong></h3></h2>
+<h4 id="analise-do-cliente"><strong>Análise do cliente</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Gerar análise do cliente, validando que os dados estão de acordo com o esperado.</li>
+  <li>Incluir Pós-venda via análise do cliente, validando cadastro correto dela.</li>
+</div>
+
+<p><br></p>
+<h4 id="atendimentos-e-implantacoes"><strong>Atendimentos e Implantações</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Preenchimento da passagem de bastão comercial e técnica.</li>
+  <li>Cadastro e validação de um agendamento na implantação.</li>
+  <li>Validação dos botões auxiliares listados na tela de implantação.</li>
+  <li>Edição e cancelamento de uma programação.</li>
+</div>
+
+<p><br></p>
+<h4 id="relatorios"><strong>Relatórios</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Geração e validação de relatório - Perda de Clientes Novos.</li>
+</div>
+
+<h2 id="sgsai"><h3 style="color: #48c; margin: 38px 0;"><strong>SGSAI</strong></h3></h2>
+<h4 id="fluxo-de-versao"><strong>Fluxo de versão</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>
+    Fluxo de versão Domínio Web:
+    <ul>
+      <li>Cadastro de uma versão</li>
+      <li>Tramitações</li>
+      <li>Cadastro de SAI</li>
+      <li>Realização de trâmites até a aprovação da SAI</li>
+      <li>Finalização e conclusão da versão</li>
+    </ul>
+  </li>
+<br>
+  <li>
+    Fluxo de versão Onvio BR:
+    <ul>
+      <li>Cadastro de uma versão</li>
+      <li>Tramitações</li>
+      <li>Cadastro de SAI</li>
+      <li>Realização de trâmites até a aprovação da SAI tanto em DEMO quanto em QED</li>
+      <li>Finalização e conclusão da versão</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="sai-validacao-dos-botoes-auxiliares"><strong>SAI - Validação dos botões auxiliares</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Validação dos seguintes botões auxiliares:
+    <ul>
+      <li>Reclassificar</li>
+      <li>Editar</li>
+      <li>Alterar Equipe</li>
+      <li>Previsão</li>
+      <li>Prioridade Estimativa</li>
+      <li>Imprimir</li>
+      <li>Retorno Parcial</li>
+      <li>Tipo de Teste</li>
+      <li>Vinculo de Projeto existente</li>
+    </ul>
+</div>
+
+<p><br></p>
+<h4 id="notificacao-de-erro"><strong>Notificação de Erro</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de uma Notificação de Erro.</li>
+  <li>Validação dos trâmites e listagem nas consultas.</li>
+  <li>Validação da SSC gerada automaticamente.</li>
+</div>
+
+<p><br></p>
+<h4 id="solicitacao-de-alteracao-legal"><strong>Solicitação de Alteração Legal</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de uma Solicitação de Alteração Legal.</li>
+  <li>Validação dos trâmites e listagem nas consultas.</li>
+  <li>Validação da SSC gerada automaticamente.</li>
+</div>
+
+<p><br></p>
+<h4 id="solicitacao-de-implementacao-legal"><strong>Solicitação de Implementação Legal</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de uma Solicitação de Implementação Legal.</li>
+  <li>Validação dos trâmites e listagem nas consultas.</li>
+  <li>Validação da SSC gerada automaticamente.</li>
+</div>
+
+<p><br></p>
+<h4 id="pre-sai"><strong>Pré-SAI</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de uma Solicitação de Melhoria.</li>
+  <li>Cadastro de uma Pré-SAI.</li>
+  <li>Cadastro de uma SAI via Pré-SAI, validando trâmites e listagens dos registros.</li>
+</div>
+
+<h2 id="sgsc"><h3 style="color: #48c; margin: 38px 0;"><strong>SGSC</strong></h3></h2>
+<h4 id="ocorrencias"><strong>Ocorrências</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de uma Ocorrência e Sub-Ocorrência, validando os seguintes trâmites:
+    <ul>
+      <li>Em Análise</li>
+      <li>Aguardando resposta</li>
+      <li>Respondido</li>
+      <li>Concluído</li>
+    </ul>
+  </li>
+  <li>Validação de todos os filtros da tela de Ocorrências</li>
+</div>
+
+<p><br></p>
+<h4 id="liberacao-triachat-humano"><strong>Liberação TRIA/Chat Humano</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Verificando o funcionamento correto da tela, validando seguintes pontos:
+    <ul>
+      <li>Validação dos filtros e consultas da tela</li>
+      <li>Validação do funcionamento da troca das checkboxs e botões auxiliares</li>
+      <li>Validação da atualização de registros já existentes</li>
+      <li>Validação da paginação da tela, trocando de páginas e validando registros</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="ssc_1"><strong>SSC</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de SSC, executando os seguintes cenários:
+    <ul>
+      <li>Domínio Contábil - Validando trâmites e listagem nas telas de consultas</li>
+      <li>Domínio Inova - Validando trâmites e listagem nas telas de consultas</li>
+    </ul>
+  </li>
+  <li>Validação da ordenação dos registros pelo último trâmite na tela de solicitações de suporte.</li>
+</div>
+
+<p><br></p>
+<h4 id="chat-plug-social"><strong>Chat Plug Social</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Realizar acesso no Chat Plug Social, verificando componentes nas seguintes abas após o login:
+    <ul>
+      <li>Aba Dashboard</li>
+      <li>Aba Chat</li>
+      <li>Aba Contatos</li>
+      <li>Aba Histórico SGD</li>
+      <li>Aba Configurações > Clientes</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="central-de-solucoes_1"><strong>Central de Soluções</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li> Testes na Central de Soluções, validando seguintes pontos:
+    <ul>
+      <li>Cadastro de uma Solução, editando e incluido anexos</li>
+      <li>Validar listagem da solução cadastrada na tela "SGSC > Gerenciar > Central de Soluções"</li>
+      <li>Validar listagem da solução cadastrada na tela "SGSC > Central de Soluções"</li>
+    </ul>
+  </li>
+</div>
+
+<p><br></p>
+<h4 id="filtros-tela-de-pesquisar-clientes"><strong>Filtros - Tela de Pesquisar Clientes</strong></h4>
+<p><br></p>
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Verificando o funcionamento dos filtros da tela de Pesquisar Clientes, validando os seguintes Filtros:
+    <ul>
+      <li>Nome</li>
+      <li>Número de série</li>
+      <li>Telefone</li>
+      <li>CNPJ</li>
+      <li>Código</li>
+    </ul>
+  </li>
+</div></div>
+        
+        
+    </div>
+
+    
+      <footer class="col-md-12 text-center">
+          
+          
+            <hr>
+            <p>
+            <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</small>
+            </p>
+          
+
+          
+          
+      </footer>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+
+    
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+        
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <script>var base_url = ".."</script>
+    
+    <script src="../js/base.js"></script>
+    <script src="../search/main.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+</html>
