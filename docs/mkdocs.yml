@@ -1,6 +1,6 @@
 site_name: Automação de Testes - EBS Domínio
 site_description: Documentação sobre a automação de testes no EBS Domínio
-site_url: https://tr.github.io/ebs-dominio_automacao-teste-contabil/
+site_url: https://tr.github.io/KauaGrathwohlTR/ebs-dominio_automacao-teste-contabil
 theme:
   name: cinder
   palette:
