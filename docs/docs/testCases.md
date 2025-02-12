@@ -185,7 +185,7 @@
 
 <br>
 
-#### **Cadastro de SSC**
+#### **Solicitações de Suporte (SSC)**
 
 <br>
 
@@ -251,7 +251,7 @@
 
 <br>
 
-#### **SSC**
+#### **Solicitações de Suporte (SSC)**
 
 <br>
 
@@ -470,7 +470,7 @@
 
 <br>
 
-#### **SSC**
+#### **Solicitações de Suporte (SSC)**
 
 <br>
 
@@ -481,6 +481,13 @@
       <li>Domínio Inova - Validando trâmites e listagem nas telas de consultas</li>
     </ul>
   </li>
+  <li>Cadastro de SS via SSC, validando os seguintes pontos:
+    <ul>
+      <li>Cadastro e validação do registro da SS, além de validações relacionadas ao vinculo à SSC</li>
+      <li>Validar os seguintes trâmites: Em Análise, Aguardando Resposta, Respondido, Aguardando Resposta TI, Aguardando Resposta - Parceiro, Concluído</li>
+    </ul>
+  </li>
+
   <li>Validação da ordenação dos registros pelo último trâmite na tela de solicitações de suporte.</li>
 </div>
 
@@ -535,3 +542,21 @@
     </ul>
   </li>
 </div>
+
+## <h3 style="color: #48c; margin: 38px 0;">**SGSUN**</h3>
+
+#### **Solicitações de Suporte (SS)**
+
+<br>
+
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+  <li>Cadastro de Notificação de Erro via SS, validando os seguintes pontos:
+    <ul>
+      <li>Cadastro da Notificação de Erro, validando os campos esperados no cadastro</li>
+      <li>Validação dos detalhes da Notificação de Erro cadastrada</li>
+      <li>Validação dos vínculos da SS com a Notificação de Erro</li>
+    </ul>
+  </li>
+</div>
+
+<br>
